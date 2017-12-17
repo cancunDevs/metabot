@@ -1,7 +1,11 @@
-const { RtmClient } = require('@slack/client');
+const express = require('express');
+const bot = require('./src/bot');
+const { name, version } = require('./package.json');
 
-const token = process.env.SLACK_BOT_TOKEN;
-const options = { logLevel: 'error' };
-const rtm = new RtmClient(token, options);
+const port = process.env.PORT || 3000;
+const app = express();
 
-rtm.start();
+app.get('/', (_, res) => res.send({ name, version }));
+
+app.listen(port);
+bot.listen();
