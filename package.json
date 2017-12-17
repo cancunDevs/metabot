@@ -1,0 +1,35 @@
+{
+  "name": "metabot",
+  "version": "0.0.0",
+  "description": "a slack bot",
+  "main": "index.js",
+  "repository": "git@github.com:cancunDevs/metabot.git",
+  "author": "tugorez <tugorez@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=8",
+    "yarn": ">=1"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "lint": "eslint . --fix",
+    "start": "node index"
+  },
+  "lint-staged": {
+    "**/*.{js,json,css}": ["prettier --single-quote --write", "git add"]
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-prettier": "^2.4.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.2"
+  },
+  "dependencies": {
+    "@slack/client": "^3.14.2"
+  }
+}
